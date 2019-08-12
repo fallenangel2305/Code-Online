@@ -1,0 +1,43 @@
+
+<form [formGroup]='signupForm' (ngSubmit)= "onsubmit()">
+
+        
+    
+        
+            
+
+            <div class="login-box">
+                  <h2>Signup</h2>
+                   
+                   <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Email" formControlName= "email" required [(ngModel)]="email" id="form1" >
+                    <div *ngIf= 'submitted && signupForm.controls.email.errors' class= "error">
+                      <div *ngIf= 'signupForm.controls.email.required'></div>
+                     </div>
+                  </div>
+
+                    
+                    <div class="textbox">
+                      <i class="fas fa-user"></i>
+                      <input type="text" placeholder="Username" formControlName= "username" required [(ngModel)]="username" id="form2" >
+                      <div *ngIf= 'submitted && signupForm.controls.username.errors' class= "error">
+                          <div *ngIf= 'signupForm.controls.username.required'></div>
+                      </div>
+                    </div>
+          
+            <div class="textbox">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" formControlName= "password" required [(ngModel)]="password" id="form3">
+              <div *ngIf= "submitted && signupForm.controls.password.errors" class= "error">
+                <div *ngIf= "signupForm.controls.password.required"></div>
+            </div>
+            </div>
+        
+          
+            <input type="submit" class="btn" value="Sign up">
+          
+          </div>
+
+          
+    </form>

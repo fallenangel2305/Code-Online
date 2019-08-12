@@ -1,0 +1,30 @@
+
+<form [formGroup]='loginForm' (ngSubmit)= "onsubmit()">
+
+    <h1 *ngIf='success'>Login Successful</h1>
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <div class="textbox">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" formControlName= "username" required [(ngModel)]="username" id="form1" >
+          <div *ngIf= 'submitted && loginForm.controls.username.errors' class= "error">
+              <div *ngIf= 'loginForm.controls.username.required'></div>
+          </div>
+        </div>
+      
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" formControlName= "password" required [(ngModel)]="password" id="form2">
+          <div *ngIf= "submitted && loginForm.controls.password.errors" class= "error">
+            <div *ngIf= "loginForm.controls.password.required"></div>
+        </div>
+        </div>
+      
+        <input type="submit" class="btn" value="Sign in">
+      </div>
+      <div class="signup">
+          <p><a routerLink= '/signup'>Don't have an account? Signup</a></p>
+      </div>
+      
+</form>
